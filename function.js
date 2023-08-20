@@ -68,18 +68,3 @@ function setValue(areaID,valueSet) {
     const getAReaId = document.getElementById(areaID).innerText = valueSet;
 }
 
-
-
-
-
-
-
-
-// …or create a new repository on the command line
-// echo "# b8a5-summer-sale-Mdforidulislam" >> README.md
-// git init
-// git add README.md
-// git commit -m "first commit"
-// git branch -M main
-// git remote add origin https://github.com/Programming-Hero-Web-Course4/b8a5-summer-sale-Mdforidulislam.git
-// git push -u origin main
