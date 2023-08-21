@@ -1,3 +1,4 @@
+// Call the function for each product number
 let totalAmount = 0;
 
 function buyProductEveryCard(productNumberId, priceElementId, productInfo, setArea, productTotalA, purchaseBtn1,couponBtn,coponValue,discountArea,ramainingBlc,goHome) {
@@ -12,7 +13,7 @@ function buyProductEveryCard(productNumberId, priceElementId, productInfo, setAr
                 const convertAmount = parseFloat(getAmountInfo.innerText);
                 totalAmount += convertAmount;
                 const setTofixtTotal = totalAmount.toFixed(2);
-                setValue(setArea, getProductInfo);
+                setValueProductInfo(setArea, getProductInfo);
                 setValue(productTotalA, setTofixtTotal);
 
                 // Enable purchase button
@@ -55,6 +56,8 @@ function buyProductEveryCard(productNumberId, priceElementId, productInfo, setAr
             document.getElementById(coponValue).value = '';
             setValue(discountArea,getDiscount)
             setValue(ramainingBlc,remainBalance)
+
+            console.log('click')
         }
     })
 
@@ -62,9 +65,19 @@ function buyProductEveryCard(productNumberId, priceElementId, productInfo, setAr
 
 }
 
-// setValue for all info 
+let serialNumber = 0;
 
-function setValue(areaID,valueSet) {
-    const getAReaId = document.getElementById(areaID).innerText = valueSet;
+function setValueProductInfo(areaID, valueSet) {
+    const getAReaId = document.getElementById(areaID);
+    const creaLI = document.createElement('li');
+    creaLI.style.listStyle = 'none';
+    serialNumber++;
+    creaLI.textContent = serialNumber + '. ' + valueSet;
+
+    getAReaId.appendChild(creaLI);
 }
 
+
+function setValue(areaID, valueSet) {
+    document.getElementById(areaID).innerText = valueSet;
+}
